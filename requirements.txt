@@ -2,3 +2,4 @@ openai
 pydantic
 numpy
 flask
+openenv-core>=0.2.0

@@ -1,8 +1,16 @@
 [project]
 name = "openenv-waste-ai"
 version = "0.1.0"
-description = "Waste management RL environment for OpenEnv"
-authors = ["Abhinav Reddy"]
+description = "Waste management RL environment"
+authors = [{name = "Abhinav Reddy"}]
+dependencies = [
+    "openenv-core>=0.2.0",
+    "flask",
+    "pydantic"
+]
+
+[project.scripts]
+server = "server.app:app"
 
 [tool.openenv]
 env_class = "env.waste_env.WasteEnv"
