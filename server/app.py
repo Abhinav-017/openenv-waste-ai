@@ -1,17 +1,20 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from flask import Flask, request, jsonify
 from env.waste_env import WasteEnv
 
 app = Flask(__name__)
-
 env = WasteEnv()
+
+@app.route("/")
+def home():
+    return "OpenEnv Waste AI is running"
 
 @app.route("/reset", methods=["POST"])
 def reset():
-    state = env.reset()
-    return jsonify(state)
+    return jsonify(env.reset())
 
 @app.route("/step", methods=["POST"])
 def step():
@@ -25,5 +28,8 @@ def step():
         "done": done
     })
 
-if __name__ == "__main__":
+def main():
     app.run(host="0.0.0.0", port=7860)
+
+if __name__ == "__main__":
+    main()
