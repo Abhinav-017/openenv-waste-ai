@@ -1,0 +1,8 @@
+[project]
+name = "openenv-waste-ai"
+version = "0.1.0"
+description = "Waste management RL environment for OpenEnv"
+authors = ["Abhinav Reddy"]
+
+[tool.openenv]
+env_class = "env.waste_env.WasteEnv"
